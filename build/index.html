@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="bg-gray-900 h-screen w-screen mx-auto xl:overflow-hidden">
+    <div class="wrapper mx-auto max-w-4xl flex justify-center items-center">
+        <div class="container space-y-8 mt-20 mb-20 h-full px-5">
+            <div class="sub-container grid grid-cols-1 sm:grid-cols-2 gap-3 mx-auto px-5">
+                <!-- Budget -->
+                <div class="shadow-xl bg-slate-50 p-4 w-full space-y-4">  
+                    <h3 class="text-xl font-bold mb-5">Budget</h3>              
+                    <p id="budget-error" class="hide error">
+                        Value cannot be empty or negative
+                    </p>
+                    <input type="number" id="budget" placeholder="Enter Total Amount" class="block focus:outline-none py-2 px-5 border-[1px] border-gray-400">
+                    <button class="submit bg-blue-400 rounded-md py-2 px-4" id="total-amount-button">Set Budget</button>
+                </div>  
+                <!-- Expenditure -->
+                <div class="user-amount-container shadow-xl bg-slate-50 p-4 w-full space-y-4 px-5">
+                    <h3 class="text-xl font-bold mb-5">Expenses</h3>
+                    <p class="hide error" id="product-title-error">Value cannot be empty</p>
+                    <input type="text" id="product-title" placeholder="Enter Title of Product" class="block focus:outline-none py-2 px-5 border-[1px] border-gray-400">
+                    <p class="hide error" id="product-title-error">Value cannot be empty</p>
+                    <input type="number" id="user-amount" placeholder="Enter Cost of Product" class="block focus:outline-none py-2 px-5 border-[1px] border-gray-400">
+                    <button class="submit bg-blue-400 rounded-md py-2 px-4" id="check-amount">Check Amount</button>
+                </div>
+            </div>
+            <!-- Output -->
+            <div class="output-container flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3 mx-auto items-center justify-between px-5">
+                <div class="total-budget bg-slate-200 w-full p-4 shadow-md rounded-md">
+                    <p class=" mb-2">Total Budget</p>
+                    <span class="total-amount" id="amount">0</span>
+                </div>
+                <div class="expenses-output bg-slate-200 w-full p-4 shadow-md rounded-md">
+                    <p class=" mb-2">Expenses</p>
+                    <span class="expense-amount" id="expenditure-amount">0</span>
+                </div>
+                <div class="balance-output bg-slate-200 w-full p-4 shadow-md rounded-md">
+                    <p class=" mb-2">Balance</p>
+                    <span class="balance-amount" id="balance-amount">0</span>
+                </div>
+            </div>
+            <!-- Expense List -->
+            <div class="expense-list p-4 bg-slate-200 w-full mt-8 mx-auto rounded-md shadow-xl px-5">
+                <h3 class="text-xl mb-4 font-bold">Expense List</h3>
+                <div class="list-container" id="list">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
